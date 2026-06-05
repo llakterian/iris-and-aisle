@@ -66,5 +66,5 @@ ON order_items FOR SELECT USING (auth.role() = 'authenticated');
 -- 6. Insert some placeholder mock products
 INSERT INTO products (name, description, price, image_url, category) VALUES
 ('The Classic Tortoise', 'A timeless round frame made from hand-polished Italian acetate.', 12500, 'https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&q=80&w=1000', 'women'),
-('The Aviator Matte', 'Sleek, lightweight titanium frames built for durability and comfort.', 14500, 'https://images.unsplash.com/photo-1583141170695-1f95a5fcc180?auto=format&fit=crop&q=80&w=1000', 'men'),
+('The Aviator Matte', 'Sleek, lightweight titanium frames built for durability and comfort.', 14500, 'https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&q=80&w=1000', 'men'),
 ('The Clear Crystal', 'Modern transparent frames that match any outfit perfectly.', 11000, 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=1000', 'unisex');

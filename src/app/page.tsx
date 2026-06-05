@@ -49,7 +49,7 @@ export default function Home() {
           </Link>
           <Link href="/products?category=men" className="group relative h-96 rounded-2xl overflow-hidden bg-gray-100 block">
             <img 
-              src="https://images.unsplash.com/photo-1583141170695-1f95a5fcc180?auto=format&fit=crop&q=80&w=1000" 
+              src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&q=80&w=1000" 
               alt="Men's glasses" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
