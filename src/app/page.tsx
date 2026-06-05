@@ -15,15 +15,15 @@ export default function Home() {
           />
         </div>
         <div className="relative z-10 flex flex-col items-center text-center px-4">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 drop-shadow-lg">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-6 drop-shadow-sm">
             See the World,<br/> Beautifully.
           </h1>
-          <p className="text-lg md:text-xl text-gray-100 max-w-2xl mb-10 drop-shadow-md">
+          <p className="text-lg md:text-xl text-gray-700 max-w-2xl mb-10 drop-shadow-sm">
             Premium, handcrafted eyewear designed for the modern aesthetic. Discover your perfect frame today.
           </p>
           <Link 
             href="/products" 
-            className="group flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-all duration-300 shadow-xl"
+            className="group flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-gray-800 transition-all duration-300 shadow-xl"
           >
             Shop the Collection
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
