@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Iris & Aisle - Premium Eyewear E-Commerce
 
-## Getting Started
+A modern, full-stack e-commerce platform built specifically for premium eyewear brands. This project features a consumer-facing storefront, a persistent shopping cart, Stripe payment integration, and a secure admin dashboard for inventory management.
 
-First, run the development server:
+## Tech Stack
+- **Framework:** Next.js (App Router)
+- **Styling:** Tailwind CSS
+- **Database & Auth:** Supabase (PostgreSQL, Row Level Security, Auth)
+- **Payments:** Stripe (Checkout Sessions & Webhooks)
+- **Tracking:** Facebook Pixel
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🛒 Storefront
+- Dynamic product catalog fetched directly from Supabase.
+- Category filtering (`?category=men`, `?category=women`).
+- Persistent local shopping cart using React Context and `localStorage`.
+- Server-side Stripe Checkout session generation for secure payments.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🛡️ Admin Dashboard (`/admin`)
+- Secure login protected by Supabase Authentication.
+- **Inventory Management:** Full CRUD (Create, Read, Update, Delete) capabilities for products. Changes reflect instantly on the live storefront.
+- **Order Tracking:** View all customer orders, total revenue, and order statuses (Pending, Paid, Shipped) updated automatically via Stripe webhooks.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Architecture Highlights
+- **Security:** All database interactions are protected by Row Level Security (RLS). Public users can only read products, while only authenticated admins can mutate inventory or view orders.
+- **Webhooks:** Includes an `/api/webhook` route that securely listens to Stripe events to update order status in real-time.
+- **Marketing:** The layout is injected with the Facebook Pixel Conversion snippet to track `PageView` events natively within the Next.js routing lifecycle.
 
-## Learn More
+## Getting Started Locally
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repository.
+2. Install dependencies: `npm install`
+3. Copy `.env.example` to `.env.local` and add your keys:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `STRIPE_SECRET_KEY`
+4. Run the development server: `npm run dev`
